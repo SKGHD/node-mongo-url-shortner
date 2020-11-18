@@ -5,8 +5,6 @@ import mongoose from "mongoose";
 import ShortURL from "./models/url.js";
 const app = express();
 
-const PORT = 8080;
-
 app.use(express.urlencoded({ extended: false }));
 app.set("view engine", "ejs");
 
@@ -67,5 +65,5 @@ mongoose
 
 // Listening for incoming requests on successful connection to MongoAtlas
 mongoose.connection.on("open", () => {
-  app.listen(PORT, () => console.log(`Server Running on port: ${PORT}`));
+  app.listen(process.env.PORT || "3000", () => console.log(`Server Running`));
 });
