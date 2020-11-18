@@ -49,7 +49,7 @@ app.get("/:shortid", async (req, res) => {
 
 // database connection
 
-const url = `mongodb+srv://skghd:LFTDdcsWYlI7eVlw@cluster0.u0gdz.mongodb.net/urlshortner?retryWrites=true&w=majority`;
+const driverUrl = process.env.MONGODB_KEY;
 
 const connectionParams = {
   useNewUrlParser: true,
@@ -57,7 +57,7 @@ const connectionParams = {
   useUnifiedTopology: true,
 };
 mongoose
-  .connect(url, connectionParams)
+  .connect(driverUrl, connectionParams)
   .then(() => {
     console.log("Connected to database ");
   })
