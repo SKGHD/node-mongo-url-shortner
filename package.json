@@ -1,0 +1,19 @@
+{
+  "name": "node_url_shortner",
+  "version": "1.0.0",
+  "description": "A url shortner using NodeJS + Express",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "Sangram Gorai <skghdhere@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
