@@ -1,5 +1,10 @@
 import express from "express";
 import mongoose from "mongoose";
+import dotenv from 'dotenv';
+
+if (process.env.NODE_ENV !== 'production')
+  dotenv.config()
+
 
 // importing database schema model
 import ShortURL from "./models/url.js";
@@ -7,7 +12,7 @@ const app = express();
 
 app.use(express.urlencoded({ extended: false }));
 app.set("view engine", "ejs");
-
+app.use(express.static('./views'));
 // routes
 app.get("/", async (req, res) => {
   const allData = await ShortURL.find({}, { _id: 0 });
